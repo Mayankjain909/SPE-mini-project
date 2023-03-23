@@ -27,6 +27,7 @@ pipeline {
             }
         }
         stage('Publish Docker Images') {
+
             steps {
                 withDockerRegistry([ credentialsId: "dockerid", url: "" ]) {
                     sh 'docker push jainmayank909/calcproj:latest'
